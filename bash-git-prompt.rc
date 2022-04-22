@@ -34,7 +34,7 @@ function bgp_prompt() {
   fi
 
   # Get git status
-  local GIT_STATUS=$(git status --porcelain --ignore-submodules 2> /dev/null | wc -l)
+  local GIT_STATUS=$(git status --porcelain --ignore-submodules 2> /dev/null | wc -l|sed 's/ //g')
   local GIT_STATUS_PS="$GREEN=$RESET"
   if [[ "0" != "$GIT_STATUS" ]]; then
     GIT_STATUS_PS="$RED~$GIT_STATUS$RESET"
