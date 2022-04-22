@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+case $(uname -s) in
+'Darwin')
+	alias emacs="open -a Emacs"
+	alias ls="ls -F --color "
+	;;
+*)
+	;;
+esac
